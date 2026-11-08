@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.coverage
+
+# Local configuration and generated reports can contain personal paths.
+storage-organizer.json
+*-inventory-*.json
+*-report*.json
+*-plan*.json
+quarantine.json
+journal-*.json
+.storage-organizer/

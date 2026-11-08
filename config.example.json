@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "roots": [
+    "~/Desktop",
+    "~/Downloads",
+    "/Volumes/External HDD",
+    "/Volumes/Backup SSD"
+  ],
+  "state_dir": "~/.storage-organizer",
+  "ignore_dir_names": [
+    ".git",
+    "node_modules",
+    ".venv",
+    "venv",
+    "site-packages",
+    ".Spotlight-V100",
+    ".fseventsd",
+    ".Trashes",
+    ".Trash",
+    ".TemporaryItems",
+    "System Volume Information",
+    "Storage Quarantine - Review"
+  ],
+  "protected_dir_names": [
+    ".git",
+    "node_modules",
+    ".venv",
+    "venv",
+    "site-packages",
+    "OllamaModels",
+    "Photos Library.photoslibrary",
+    "Photo Booth Library",
+    "Music Library.musiclibrary"
+  ],
+  "ignore_globs": [
+    "**/.Spotlight-V100/**",
+    "**/.fseventsd/**",
+    "**/.Trashes/**",
+    "**/.TemporaryItems/**",
+    "**/System Volume Information/**"
+  ],
+  "protected_globs": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.venv/**",
+    "**/venv/**",
+    "**/site-packages/**",
+    "**/OllamaModels/**",
+    "**/*.photoslibrary/**",
+    "**/*.musiclibrary/**",
+    "**/Photo Booth Library/**",
+    "**/Library/CloudStorage/**",
+    "**/Applications/**",
+    "**/System/**"
+  ],
+  "ignore_file_globs": [
+    "._*",
+    ".DS_Store",
+    ".localized",
+    "Thumbs.db",
+    "desktop.ini"
+  ],
+  "archive_extensions": [
+    ".zip",
+    ".7z",
+    ".rar",
+    ".tar",
+    ".tgz",
+    ".gz",
+    ".bz2",
+    ".xz",
+    ".dmg",
+    ".iso",
+    ".pkg"
+  ],
+  "quarantine_name": "Storage Quarantine - Review",
+  "keeper_preference": [
+    "Important Files",
+    "Important Documents",
+    "Pictures",
+    "Books"
+  ],
+  "moves": [],
+  "rules": [
+    {
+      "name": "Desktop screenshots by month",
+      "root": "~/Desktop",
+      "match": {
+        "extensions": [".png", ".jpg", ".jpeg"],
+        "regex": "^Screenshot (?P<year>\\d{4})-(?P<month>\\d{2})-"
+      },
+      "destination": "~/Desktop/Screenshots/{year}-{month}"
+    },
+    {
+      "name": "Desktop screen recordings by month",
+      "root": "~/Desktop",
+      "match": {
+        "regex": "^Screen Recording (?P<year>\\d{4})-(?P<month>\\d{2})-"
+      },
+      "destination": "~/Desktop/Screen Recordings/{year}-{month}"
+    },
+    {
+      "name": "Loose Desktop archives",
+      "root": "~/Desktop",
+      "match": {
+        "extensions": [".zip", ".7z", ".rar"],
+        "max_depth": 0
+      },
+      "destination": "~/Desktop/Archives/To Sort"
+    }
+  ]
+}
